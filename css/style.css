@@ -3,3 +3,28 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+body {
+  background: linear-gradient(to bottom, #009688 20%, #DADBD4 0);
+}
+
+.container {
+  margin: 20px auto;
+  height: 100vh;
+  width: 80%;
+  min-width: 800px;
+}
+
+#left-box {
+  float: left;
+  height: 100%;
+  width: 35%;
+  background-color: lightblue;
+}
+
+#right-box {
+  float: left;
+  height: 100%;
+  width: 65%;
+  background-color: salmon;
+}
