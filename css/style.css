@@ -5,7 +5,12 @@
 }
 
 body {
+  font-family: 'Lato', sans-serif;
   background: linear-gradient(to bottom, #009688 20%, #DADBD4 0);
+}
+
+i:hover {
+  cursor: pointer;
 }
 
 .container {
@@ -23,33 +28,106 @@ body {
   float: left;
   height: 100%;
   width: 35%;
-  background-color: lightblue;
 }
 
+  /* Header */
 #left-box .left-header {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 70px;
   background-color: #EAEAEA;
 }
 
+    /* Avatar e Nome */
+#left-box .left-header .avatar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+}
+
+#left-box .left-header .avatar img {
+  margin-right: 10px;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#left-box .left-header .avatar span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+    /* Icone */
+#left-box .left-header .icons {
+  font-size: 22px;
+  color: #B1B1B1;
+}
+
+#left-box .left-header .icons i {
+  margin-right: 20px;
+}
+
+  /* Disclaimer */
 #left-box .disclaimer {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
   height: 80px;
   background-color: #8EDAFC;
 }
 
+#left-box .disclaimer i {
+  margin: 0 10px;
+  padding: 15px 12px;
+  font-size: 20px;
+  color: #8EDAFC;
+  background-color: white;
+  border-radius: 50%;
+}
+
+#left-box .disclaimer p.attiva-notifiche {
+  margin-bottom: 2px;
+  color: #6090A6;
+  text-decoration: underline;
+}
+
+  /* Search Contacts */
 #left-box .search {
+  display: flex;
   padding: 7px;
   height: 50px;
   background-color: #FAFAFA;
 }
 
-#left-box .search input {
+#left-box .search div {
+  padding: 5px;
   height: 100%;
-  width: 100%;
-  outline-color: lightgrey;
+  width: 12%;
+  text-align: center;
+  color: #B6B9BC;
   background-color: #FFFFFF;
-  border: 2px solid #F7F7F7;
+  border-top: 2px solid #F7F7F7;
+  border-bottom: 2px solid #F7F7F7;
 }
 
+#left-box .search input {
+  padding: 5px;
+  height: 100%;
+  width: 88%;
+  outline-color: lightgrey;
+  color: grey;
+  background-color: #FFFFFF;
+  border: 2px solid #F7F7F7;
+  border-left: 1px solid #F7F7F7;
+}
+
+#left-box .search input::placeholder {
+  color: #D8D9DA;
+}
+
+  /* Contact List */
 #left-box .contacts {
   height: calc(100% - 210px);
   min-height: 200px;
@@ -59,8 +137,26 @@ body {
 }
 
 #left-box .contacts .contact {
+  padding: 10px 20px;
   height: 100px;
   border-bottom: 1px solid #F8F8F8;
+}
+
+#left-box .contacts .contact:hover {
+  background-color: #EAEAEA;
+  cursor: pointer;
+}
+
+#left-box .contacts .contact img {
+  margin-right: 20px;
+  height: 100%;
+  vertical-align: top;
+  border-radius: 50%;
+}
+
+#left-box .contacts .contact span {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* Parte destra */
@@ -73,29 +169,84 @@ body {
   width: 65%;
 }
 
+  /* Header */
 #right-box .right-header {
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 70px;
   background-color: #EAEAEA;
   border-left: 1px solid #D8D8D8;
 }
 
+    /* Avatar e Nome */
+#right-box .right-header .avatar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+}
+
+#right-box .right-header .avatar img {
+  margin-right: 10px;
+  height: 100%;
+  border-radius: 50%;
+}
+
+#right-box .right-header .avatar p:first-child {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#right-box .right-header .avatar p:last-child {
+  color: grey;
+}
+
+    /* Icone */
+#right-box .right-header .icons {
+  font-size: 22px;
+  color: #B1B1B1;
+}
+
+#right-box .right-header .icons i {
+  margin-right: 20px;
+}
+
+  /* Conversation */
 #right-box main.conversation {
   width: 100%;
   flex-grow: 2;
   overflow-y: scroll;
-  background-color: grey;
+  background-image: url(../img/mine.jpg);
 }
 
+/* Footer */
 #right-box footer.send-message {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding: 10px 20px;
   height: 70px;
   background-color: #F3EEEA;
 }
 
+#right-box footer.send-message i {
+  font-size: 22px;
+  color: grey;
+}
+
 #right-box footer.send-message input {
+  padding: 10px;
   height: 100%;
-  width: 100%;
+  width: 85%;
   outline-color: lightgrey;
+  color: grey;
   background-color: #FFFFFF;
   border: 2px solid #F7F7F7;
+  font-size: 20px;
+}
+
+#right-box footer.send-message input::placeholder {
+  color: darkgrey;
 }
