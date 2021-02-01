@@ -15,13 +15,49 @@ body {
   min-width: 800px;
 }
 
+/* Parte sinistra */
 #left-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   float: left;
   height: 100%;
   width: 35%;
   background-color: lightblue;
 }
 
+#left-box .left-header {
+  height: 100px;
+  background-color: #EAEAEA;
+}
+
+#left-box .disclaimer {
+  height: 110px;
+  background-color: #8EDAFC;
+}
+
+#left-box .search {
+  padding: 7px;
+  height: 50px;
+  background-color: #FAFAFA;
+}
+
+#left-box .search input {
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 2px solid #F7F7F7;
+}
+
+#left-box .contacts {
+  height: calc(100% - 260px);
+  min-height: 200px;
+  flex-grow: 2;
+  overflow-y: scroll;
+  background-color: #FFFFFF;
+}
+
+/* Parte destra */
 #right-box {
   float: left;
   height: 100%;
