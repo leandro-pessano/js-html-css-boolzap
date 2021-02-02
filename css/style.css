@@ -16,6 +16,7 @@ i:hover {
 .container {
   margin: 20px auto;
   height: calc(100vh - 40px);
+  min-height: 220px;
   width: 80%;
   min-width: 800px;
 }
@@ -130,7 +131,6 @@ i:hover {
   /* Contact List */
 #left-box .contacts {
   height: calc(100% - 210px);
-  min-height: 200px;
   flex-grow: 2;
   overflow-y: scroll;
   background-color: #FFFFFF;
@@ -215,13 +215,47 @@ i:hover {
 
   /* Conversation */
 #right-box main.conversation {
+  padding: 40px 60px;
+  height: calc(100% - 140px);
   width: 100%;
-  flex-grow: 2;
   overflow-y: scroll;
   background-image: url(../img/mine.jpg);
 }
 
-/* Footer */
+.conversation .message {
+  margin: 6px;
+  min-width: 100px;
+  padding: 20px;
+  border-radius: 10px;
+  clear: both;
+  position: relative;
+  word-break: break-all;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.conversation .message .date {
+  position: absolute;
+  right: 6px;
+  bottom: 3px;
+  color: grey;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.message.sent {
+  margin-left: 80px;
+  float: right;
+  background-color: #D7F9BC;
+}
+
+.message.received {
+  margin-right: 80px;
+  float: left;
+  background-color: white;
+}
+
+  /* Footer */
 #right-box footer.send-message {
   display: flex;
   justify-content: space-around;
