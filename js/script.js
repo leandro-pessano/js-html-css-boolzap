@@ -16,18 +16,18 @@ var app = new Vue ({
         messages: [
           {
             date: '10/01/2020 15:30:55',
-            text: 'Hai portato a spasso il cane?',
+            text: 'Antani, blinda la supercazzola prematurata con doppio scappellamento a destra?',
             status: 'sent'
           },
           {
             date: '10/01/2020 15:50:00',
-            text: 'Ricordati di dargli da mangiare',
-            status: 'sent'
+            text: 'Come?',
+            status: 'received'
           },
           {
             date: '10/01/2020 16:15:22',
-            text: 'Tutto fatto!',
-            status: 'received'
+            text: 'A destra, per due!',
+            status: 'sent'
           }
         ]
       },
@@ -48,7 +48,7 @@ var app = new Vue ({
           },
           {
             date: '10/01/2020 16:15:22',
-            text: 'Bene',
+            text: 'Bene, grazie. E tu?',
             status: 'received'
           }
         ]
@@ -60,17 +60,12 @@ var app = new Vue ({
         messages: [
           {
             date: '10/01/2020 15:30:55',
-            text: 'Hai portato a spasso il cane?',
-            status: 'sent'
-          },
-          {
-            date: '10/01/2020 15:50:00',
-            text: 'Ricordati di dargli da mangiare',
+            text: 'Che ha fatto ieri la Juve?',
             status: 'sent'
           },
           {
             date: '10/01/2020 16:15:22',
-            text: 'Tutto fatto!',
+            text: 'Ha vinto!',
             status: 'received'
           }
         ]
@@ -82,17 +77,12 @@ var app = new Vue ({
         messages: [
           {
             date: '10/01/2020 15:30:55',
-            text: 'Hai portato a spasso il cane?',
-            status: 'sent'
-          },
-          {
-            date: '10/01/2020 15:50:00',
-            text: 'Ricordati di dargli da mangiare',
+            text: 'Hey, com\'è andato il colloquio?',
             status: 'sent'
           },
           {
             date: '10/01/2020 16:15:22',
-            text: 'Tutto fatto!',
+            text: 'Bene, dopo ti racconto',
             status: 'received'
           }
         ]
@@ -104,18 +94,13 @@ var app = new Vue ({
         messages: [
           {
             date: '10/01/2020 15:30:55',
-            text: 'Hai portato a spasso il cane?',
-            status: 'sent'
-          },
-          {
-            date: '10/01/2020 15:50:00',
-            text: 'Ricordati di dargli da mangiare',
-            status: 'sent'
+            text: 'Hai fatto la spesa?',
+            status: 'received'
           },
           {
             date: '10/01/2020 16:15:22',
-            text: 'Tutto fatto!',
-            status: 'received'
+            text: 'No. Falla tu!',
+            status: 'sent'
           }
         ]
       },
@@ -126,18 +111,18 @@ var app = new Vue ({
         messages: [
           {
             date: '10/01/2020 15:30:55',
-            text: 'Hai portato a spasso il cane?',
+            text: 'Da McDonald ci sono i BigMac a 2 euro, ci andiamo?',
             status: 'sent'
           },
           {
             date: '10/01/2020 15:50:00',
-            text: 'Ricordati di dargli da mangiare',
-            status: 'sent'
+            text: 'Va bene! Passo a prenderti tra 10 minuti',
+            status: 'received'
           },
           {
             date: '10/01/2020 16:15:22',
-            text: 'Tutto fatto!',
-            status: 'received'
+            text: 'Ok, a dopo',
+            status: 'sent'
           }
         ]
       },
@@ -148,18 +133,18 @@ var app = new Vue ({
         messages: [
           {
             date: '10/01/2020 15:30:55',
-            text: 'Hai portato a spasso il cane?',
-            status: 'sent'
+            text: 'Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah',
+            status: 'received'
           },
           {
             date: '10/01/2020 15:50:00',
-            text: 'Ricordati di dargli da mangiare',
-            status: 'sent'
+            text: 'Ho perso le chiavi! Non posso entrare a casa',
+            status: 'received'
           },
           {
             date: '10/01/2020 16:15:22',
-            text: 'Tutto fatto!',
-            status: 'received'
+            text: '...Arrivo',
+            status: 'sent'
           }
         ]
       },
@@ -189,7 +174,6 @@ var app = new Vue ({
   },
   methods: {
     openConv(i){
-      this.contacts[i].visible = true;
       this.counter = i;
     }
   }

@@ -85,15 +85,15 @@
       <!-- Conversation -->
       <main class="conversation">
 
-        <div class="message sent" v-for="(message, index) in contacts[counter].messages">
+        <div class="message" v-for="message in contacts[counter].messages" :class="(message.status == 'sent') ? 'sent' :(message.status == 'received') ? 'received' :'' ">
           {{message.text}}
           <div class="date"></div>
         </div>
 
-        <div class="message received">
-
+        <!-- <div class="message received" v-for="(message, index) in contacts[counter].messages" v-if="message.status == 'received'">
+          {{message.text}}
           <div class="date"></div>
-        </div>
+        </div> -->
 
       </main>
 
