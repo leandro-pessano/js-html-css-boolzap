@@ -69,9 +69,9 @@
       <!-- Header -->
       <div class="right-header">
         <div class="avatar">
-          <img :src="src+contacts[0].avatar+ext" alt="avatar">
+          <img :src="src+contacts[counter].avatar+ext" alt="avatar">
           <div>
-            <p>{{contacts[0].name}}</p>
+            <p>{{contacts[counter].name}}</p>
             <p>Ultimo accesso oggi alle</p>
           </div>
         </div>
@@ -87,7 +87,7 @@
 
         <div class="message" v-for="message in contacts[counter].messages" :class="(message.status == 'sent') ? 'sent' :(message.status == 'received') ? 'received' :'' ">
           {{message.text}}
-          <div class="date"></div>
+          <div class="date">{{message.date}}</div>
         </div>
 
         <!-- <div class="message received" v-for="(message, index) in contacts[counter].messages" v-if="message.status == 'received'">
