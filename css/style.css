@@ -243,13 +243,13 @@ i:hover {
   font-weight: normal;
 }
 
-.message.sent {
+.sent {
   margin-left: 80px;
   float: right;
   background-color: #D7F9BC;
 }
 
-.message.received {
+.received {
   margin-right: 80px;
   float: left;
   background-color: white;

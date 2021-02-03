@@ -11,7 +11,7 @@ var app = new Vue ({
       {
         name: 'Pippo1',
         avatar: '1',
-        visible: true,
+        visible: false,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -33,7 +33,7 @@ var app = new Vue ({
       {
         name: 'Pippo2',
         avatar: '2',
-        visible: true,
+        visible: false,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -55,7 +55,7 @@ var app = new Vue ({
       {
         name: 'Pippo3',
         avatar: '3',
-        visible: true,
+        visible: false,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -77,7 +77,7 @@ var app = new Vue ({
       {
         name: 'Pippo4',
         avatar: '4',
-        visible: true,
+        visible: false,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -99,7 +99,7 @@ var app = new Vue ({
       {
         name: 'Pippo5',
         avatar: '5',
-        visible: true,
+        visible: false,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -121,7 +121,7 @@ var app = new Vue ({
       {
         name: 'Pippo6',
         avatar: '6',
-        visible: true,
+        visible: false,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -143,7 +143,7 @@ var app = new Vue ({
       {
         name: 'Pippo7',
         avatar: '7',
-        visible: true,
+        visible: false,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -165,7 +165,7 @@ var app = new Vue ({
       {
         name: 'Pippo8',
         avatar: '8',
-        visible: true,
+        visible: false,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -185,5 +185,10 @@ var app = new Vue ({
         ]
       }
     ]
+  },
+  methods: {
+    openConv(i){
+      this.contacts[i].visible = true;
+    }
   }
 });

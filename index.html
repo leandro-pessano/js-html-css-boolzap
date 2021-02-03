@@ -54,8 +54,8 @@
       <!-- Contacts List -->
       <div class="contacts">
 
-        <div v-for="contact in contacts" class="contact">
-          <img :src="src+contact.avatar+ext" alt="">
+        <div @click="openConv(i)" v-for="(contact, i) in contacts" class="contact">
+          <img :src="src+contact.avatar+ext" :alt="contact.name">
           <span>{{contact.name}}</span>
         </div>
 
@@ -85,14 +85,14 @@
       <!-- Conversation -->
       <main class="conversation">
 
-        <div class="message sent">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          <div class="date">01/01/2021</div>
+        <div v-if="contact.visible == true" class="message sent" v-for="(contact, i) in contacts">
+          {{contact.messages}}
+          <div class="date"></div>
         </div>
 
         <div class="message received">
-          ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-          <div class="date">01/01/2021</div>
+
+          <div class="date"></div>
         </div>
 
       </main>
