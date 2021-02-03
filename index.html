@@ -85,8 +85,8 @@
       <!-- Conversation -->
       <main class="conversation">
 
-        <div v-if="contact.visible == true" class="message sent" v-for="(contact, i) in contacts">
-          {{contact.messages}}
+        <div class="message sent" v-for="(message, index) in contacts[counter].messages">
+          {{message.text}}
           <div class="date"></div>
         </div>
 

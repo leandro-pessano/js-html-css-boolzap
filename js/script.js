@@ -1,6 +1,7 @@
 var app = new Vue ({
   el: '#root',
   data : {
+    counter: 0,
     src: 'img/avatar_',
     ext: '.jpg',
     user: {
@@ -37,17 +38,17 @@ var app = new Vue ({
         messages: [
           {
             date: '10/01/2020 15:30:55',
-            text: 'Hai portato a spasso il cane?',
+            text: 'Ciao',
             status: 'sent'
           },
           {
             date: '10/01/2020 15:50:00',
-            text: 'Ricordati di dargli da mangiare',
+            text: 'Come stai?',
             status: 'sent'
           },
           {
             date: '10/01/2020 16:15:22',
-            text: 'Tutto fatto!',
+            text: 'Bene',
             status: 'received'
           }
         ]
@@ -189,6 +190,7 @@ var app = new Vue ({
   methods: {
     openConv(i){
       this.contacts[i].visible = true;
+      this.counter = i;
     }
   }
 });
