@@ -180,7 +180,7 @@ var app = new Vue ({
     sendMessage(){
       if (this.input != '') {
         const message = {
-          date : dayjs().format('DD/MM/YYYY H:m:s'),
+          date : dayjs().format('DD/MM/YYYY HH:mm:ss'),
           text : this.input,
           status : 'sent'
         }
