@@ -186,6 +186,17 @@ var app = new Vue ({
         }
         this.contacts[this.counter].messages.push(message);
         this.input = '';
+        setTimeout(() => {
+          const reply = {
+            date : dayjs().format('DD/MM/YYYY HH:mm:ss'),
+            text : 'ok',
+            status : 'received'
+          }
+          this.contacts[this.counter].messages.push(reply);
+        }, 1000);
+        setInterval(() => {
+          document.getElementById('conv').scrollTo(0,9999)
+        }, 0);
       }
     }
   }

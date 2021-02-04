@@ -84,7 +84,7 @@
       </div>
 
       <!-- Conversation -->
-      <main class="conversation">
+      <main id="conv" class="conversation">
 
         <div class="message" v-for="message in contacts[counter].messages" :class="(message.status == 'sent') ? 'sent' :(message.status == 'received') ? 'received' :'' ">
           {{message.text}}
