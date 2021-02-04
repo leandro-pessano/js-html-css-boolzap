@@ -2,6 +2,7 @@ var app = new Vue ({
   el: '#root',
   data : {
     counter: 0,
+    input: '',
     src: 'img/avatar_',
     ext: '.jpg',
     user: {
@@ -175,6 +176,17 @@ var app = new Vue ({
   methods: {
     openConv(i){
       this.counter = i;
+    },
+    sendMessage(){
+      if (this.input != '') {
+        const message = {
+          date : dayjs().format('DD/MM/YYYY H:m:s'),
+          text : this.input,
+          status : 'sent'
+        }
+        this.contacts[this.counter].messages.push(message);
+        this.input = '';
+      }
     }
   }
 });

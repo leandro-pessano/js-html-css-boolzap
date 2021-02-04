@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js" integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css">
   <title>Boolzapp - a (not very) innovative messaging platform</title>
 </head>
@@ -90,16 +91,11 @@
           <div class="date">{{message.date}}</div>
         </div>
 
-        <!-- <div class="message received" v-for="(message, index) in contacts[counter].messages" v-if="message.status == 'received'">
-          {{message.text}}
-          <div class="date"></div>
-        </div> -->
-
       </main>
 
       <footer class="send-message">
         <i class="far fa-smile"></i>
-        <input type="text" name="message" placeholder="Scrivi un messaggio">
+        <input v-model="input" type="text" @keydown.enter="sendMessage" placeholder="Scrivi un messaggio">
         <i class="fas fa-microphone"></i>
       </footer>
 
