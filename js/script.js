@@ -174,8 +174,12 @@ var app = new Vue ({
     ]
   },
   methods: {
+    scrollDown() {
+      document.getElementById('conv').scrollTo(0,9999)
+    },
     openConv(i){
       this.counter = i;
+      setTimeout(this.scrollDown, 0);
     },
     sendMessage(){
       if (this.input != '') {
@@ -185,9 +189,7 @@ var app = new Vue ({
           status : 'sent'
         }
         this.contacts[this.counter].messages.push(message);
-        setTimeout(() => {
-          document.getElementById('conv').scrollTo(0,9999)
-        }, 0);
+        setTimeout(this.scrollDown, 0);
         this.input = '';
         setTimeout(() => {
           const reply = {
@@ -196,9 +198,7 @@ var app = new Vue ({
             status : 'received'
           }
           this.contacts[this.counter].messages.push(reply);
-          setTimeout(() => {
-            document.getElementById('conv').scrollTo(0,9999)
-          }, 0);
+          setTimeout(this.scrollDown, 0);
         }, 1000);
       }
     }
