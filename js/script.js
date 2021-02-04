@@ -193,10 +193,8 @@ var app = new Vue ({
             status : 'received'
           }
           this.contacts[this.counter].messages.push(reply);
-        }, 1000);
-        setInterval(() => {
           document.getElementById('conv').scrollTo(0,9999)
-        }, 0);
+        }, 1000);
       }
     }
   }
