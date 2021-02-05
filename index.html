@@ -49,13 +49,13 @@
         <div>
           <i class="fas fa-search"></i>
         </div>
-        <input type="search" name="search" placeholder="Cerca o inizia una nuova chat">
+        <input v-model="searchInput" @input="searchContact" type="text" placeholder="Cerca o inizia una nuova chat">
       </div>
 
       <!-- Contacts List -->
       <div class="contacts">
 
-        <div @click="openConv(i)" v-for="(contact, i) in contacts" class="contact">
+        <div @click="openConv(i)" v-for="(contact, i) in contacts" v-if="contact.visible == true" class="contact">
           <img :src="src+contact.avatar+ext" :alt="contact.name">
           <span>{{contact.name}}</span>
         </div>
@@ -95,7 +95,7 @@
 
       <footer class="send-message">
         <i class="far fa-smile"></i>
-        <input v-model="input" type="text" @keydown.enter="sendMessage" placeholder="Scrivi un messaggio">
+        <input v-model="messageInput" type="text" @keydown.enter="sendMessage" placeholder="Scrivi un messaggio">
         <i class="fas fa-microphone"></i>
       </footer>
 

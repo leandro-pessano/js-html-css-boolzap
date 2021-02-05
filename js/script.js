@@ -2,7 +2,8 @@ var app = new Vue ({
   el: '#root',
   data : {
     counter: 0,
-    input: '',
+    searchInput: '',
+    messageInput: '',
     src: 'img/avatar_',
     ext: '.jpg',
     user: {
@@ -11,9 +12,9 @@ var app = new Vue ({
     },
     contacts : [
       {
-        name: 'Pippo1',
+        name: 'Roberto',
         avatar: '1',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -33,9 +34,9 @@ var app = new Vue ({
         ]
       },
       {
-        name: 'Pippo2',
+        name: 'Vanessa',
         avatar: '2',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -55,9 +56,9 @@ var app = new Vue ({
         ]
       },
       {
-        name: 'Pippo3',
+        name: 'Andrea',
         avatar: '3',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -72,9 +73,9 @@ var app = new Vue ({
         ]
       },
       {
-        name: 'Pippo4',
+        name: 'Giancarlo',
         avatar: '4',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -89,9 +90,9 @@ var app = new Vue ({
         ]
       },
       {
-        name: 'Pippo5',
+        name: 'Diego',
         avatar: '5',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -106,9 +107,9 @@ var app = new Vue ({
         ]
       },
       {
-        name: 'Pippo6',
+        name: 'Viviana',
         avatar: '6',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -128,9 +129,9 @@ var app = new Vue ({
         ]
       },
       {
-        name: 'Pippo7',
+        name: 'Pippo',
         avatar: '7',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -150,9 +151,9 @@ var app = new Vue ({
         ]
       },
       {
-        name: 'Pippo8',
+        name: 'Rosario',
         avatar: '8',
-        visible: false,
+        visible: true,
         messages: [
           {
             date: '10/01/2020 15:30:55',
@@ -181,16 +182,27 @@ var app = new Vue ({
       this.counter = i;
       setTimeout(this.scrollDown, 0);
     },
+    searchContact(){
+      const lowerCaseInput = this.searchInput.toLowerCase();
+      this.contacts.forEach((e, i) => {
+        const lowerCaseName = e.name.toLowerCase();
+        if (!lowerCaseName.includes(lowerCaseInput)) {
+          e.visible = false;
+        } else if (lowerCaseName.includes(lowerCaseInput)) {
+          e.visible = true;
+        }
+      });
+    },
     sendMessage(){
-      if (this.input != '') {
+      if (this.messageInput != '') {
         const message = {
           date : dayjs().format('DD/MM/YYYY HH:mm:ss'),
-          text : this.input,
+          text : this.messageInput,
           status : 'sent'
         }
         this.contacts[this.counter].messages.push(message);
         setTimeout(this.scrollDown, 0);
-        this.input = '';
+        this.messageInput = '';
         setTimeout(() => {
           const reply = {
             date : dayjs().format('DD/MM/YYYY HH:mm:ss'),
