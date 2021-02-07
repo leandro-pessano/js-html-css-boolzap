@@ -4,6 +4,8 @@ var app = new Vue ({
     counter: 0,
     searchInput: '',
     messageInput: '',
+    active : false,
+    messageCounter : -1,
     src: 'img/avatar_',
     ext: '.jpg',
     user: {
@@ -213,6 +215,13 @@ var app = new Vue ({
           setTimeout(this.scrollDown, 0);
         }, 1000);
       }
+    },
+    messageMenu(i) {
+      this.messageCounter = i;
+      this.active = !this.active;
+    },
+    deleteMessage(i) {
+      this.contacts[this.counter].messages.splice(i,1)
     }
   }
 });
