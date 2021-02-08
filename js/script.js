@@ -221,7 +221,7 @@ var app = new Vue ({
       this.active = !this.active;
     },
     deleteMessage(i) {
-      this.contacts[this.counter].messages.splice(i,1)
+      this.contacts[this.counter].messages.splice(i, 1);
     }
   }
 });

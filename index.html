@@ -61,10 +61,11 @@
             <div class="contact-name">
               {{contact.name}}
             </div>
-            <div class="contact-lastmsg">
-                {{contact.messages[contact.messages.length-1].text}}
+            <div v-if="contact.messages.length" class="contact-lastmsg">
+                {{contact.messages[contact.messages.length-1].text.slice(0, 30)}}
+                <span v-if="contact.messages[contact.messages.length-1].text.length > 30">...</span>
             </div>
-            <div class="contact-lastmsg-date">{{contact.messages[contact.messages.length-1].date}}</div>
+            <div v-if="contact.messages.length" class="contact-lastmsg-date">{{contact.messages[contact.messages.length-1].date}}</div>
           </div>
 
         </div>
